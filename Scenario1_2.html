@@ -49,9 +49,6 @@
                 color: white;
                 font-size: 20px;
             }
-            #hiddenbutton{
-                display: none;
-            }
         </style>
         <title>Scenario 1 pt.1</title>
     </head>
@@ -91,7 +88,9 @@
                 <button type="button" onclick = "checkAnswers()">Submit</button>
             </form>
             <p id="feedback"></p>
-            <button id="hiddenButton" href = "Scenario1_2.html">Next Question</button>
+            <a href = "Scenario1_2.html" class="button">
+                <p>Next Part</p>
+            </a>
         </div>
         <script>
             function checkAnswers()

@@ -49,9 +49,6 @@
                 color: white;
                 font-size: 20px;
             }
-            #hiddenButton{
-                display: none;
-            }
         </style>
         <title>Scenario 1 pt.1</title>
     </head>
@@ -91,14 +88,15 @@
                 <button type="button" onclick = "checkAnswers()">Submit</button>
             </form>
             <p id="feedback"></p>
-            <button id="hiddenButton" href = "Scenario1_2.html">Next Question</button>
+            <a href = "Scenario1_2.html" class="button">
+                <p>Next Part</p>
+            </a>
         </div>
         <script>
             function checkAnswers()
             {
                 const selected = document.querySelector('input[name="question1"]:checked');
                 const feedback = document.getElementById("feedback");
-                const hiddenButton = document.getElementById("hiddenButton");
                 
                 if (!selected)
                 {
@@ -107,7 +105,6 @@
                 else if (selected.value == "Option2")
                 {
                     feedback.textContent = "Correct! You should ensure that the sensors are properly calibrated as this could be a genuine problem."
-                    hiddenButton.style.display = block;
                 }
                 else if (selected.value == "Option1")
                 {
