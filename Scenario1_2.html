@@ -49,7 +49,7 @@
                 color: white;
                 font-size: 20px;
             }
-            #hiddenButton{
+            #hiddenbutton{
                 display: none;
             }
         </style>
@@ -98,7 +98,6 @@
             {
                 const selected = document.querySelector('input[name="question1"]:checked');
                 const feedback = document.getElementById("feedback");
-                const hiddenButton = document.getElementById("hiddenButton");
                 
                 if (!selected)
                 {
@@ -107,7 +106,6 @@
                 else if (selected.value == "Option2")
                 {
                     feedback.textContent = "Correct! You should ensure that the sensors are properly calibrated as this could be a genuine problem."
-                    hiddenButton.style.display = block;
                 }
                 else if (selected.value == "Option1")
                 {
