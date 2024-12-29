@@ -18,14 +18,17 @@
             }
             h1{
                 color:rgb(1, 10, 20);
+                font-size: 50px;
                 text-align: center;
             }
             h2{
                 color:rgb(1, 10, 20);
+                font-size: 35px;
                 text-align: center;
             }
             p{
                 color:rgb(1, 10, 20);
+                font-size: 20px;
                 text-align: center;
             }
             .homebutton{
@@ -67,11 +70,52 @@
                 <br>
                 As you continue to work, you slowly realize that the main temperature sensors are indicating that heat is 
                 rising heavily within the reactor. However, the back up sensors are indicating temperature levels are normal.
-                What should you do in this situation? 
+                What should you do in this situation?
+                <br> 
             </p>
         </div>
         <div class = "question">
+            <form>
+                <input type="radio" id="option1" name="question1" value = "Option1">
+                <label for="option1">Shut down and restart the sensors immediately.</label>
+                <input type="radio" id="option2" name="question1" value = "Option2">
+                <label for="option2">Ensure the sensors are calibrated properly.</label>
+                <input type="radio" id="option3" name="question1" value = "Option3">
+                <label for="option3">Have someone go into the section with the reactor and check it out.</label>
+                <input type="radio" id="option4" name="question1" value = "Option4">
+                <label for="option4">Just ignore it. It clearly is just a glitch in the system.</label>
 
+                <button type="button" onclick = "checkAnswers()">Submit</button>
+            </form>
+            <p id="feedback"></p>
         </div>
+        <script>
+            function checkAnswers()
+            {
+                const selected = document.querySelector('input[name="question1"]:checked');
+                const feedback = document.getElementById("feedback");
+                
+                if (!selected)
+                {
+                    feedback.textContent = "Please select an answer";
+                }
+                else if (selected.value == "Option2")
+                {
+                    feedback.textContent = "Correct! You should ensure that the sensors are properly calibrated as this could be a genuine problem."
+                }
+                else if (selected.value == "Option1")
+                {
+                    feedback.textContent = "Incorrect! There is a chance that this might be a legitimate issue and the background sensors might be failing."
+                }
+                else if (selected.value == "Option3")
+                {
+                    feedback.textContent = "Incorrect! If the reactor is undergoing meltdown, then that person might be severely injured after being sent in."
+                }
+                else
+                {
+                    feedback.textContent = "Incorrect! Ignoring potential issues is very bad."
+                }
+            }
+        </script>
     </body>
 </html>
