@@ -49,6 +49,11 @@
                 color: white;
                 font-size: 20px;
             }
+            .nextbutton{
+                align-items: center;
+                justify-content: center;
+                padding: 30px;
+            }
         </style>
         <title>Scenario 1 pt.1</title>
     </head>
@@ -88,9 +93,11 @@
                 <button type="button" onclick = "checkAnswers()">Submit</button>
             </form>
             <p id="feedback"></p>
-            <a href = "Scenario1_2.html" class="button">
-                <p>Next Part</p>
-            </a>
+            <div class = "nextbutton">
+                <a href = "Scenario1_2.html" class="button">
+                    <p>Next Part</p>
+                </a>
+            </div>
         </div>
         <script>
             function checkAnswers()
