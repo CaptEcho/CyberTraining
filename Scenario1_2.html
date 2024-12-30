@@ -49,6 +49,20 @@
                 color: white;
                 font-size: 20px;
             }
+            .question{
+                font-size: 20px;
+            }
+            #sbutton{
+                display: block;
+                align-items: center;
+                width: 100px;
+                border-radius: 15px;
+                background-color:rgb(8, 75, 114);
+                overflow: hidden;
+                text-align: center;
+                color: white;
+                font-size: 20px;
+            }
             .nextbutton{
                 align-items: center;
                 justify-content: center;
@@ -88,7 +102,7 @@
                 <input type="radio" id="option4" name="question1" value = "Option4">
                 <label for="option4"></label>Immediately wipe the workstation of all functions and replace it.<br>
 
-                <button type="button" onclick = "checkAnswers()">Submit</button>
+                <button type="sbutton" onclick = "checkAnswers()">Submit</button>
             </form>
             <p id="feedback"></p>
         </div>
