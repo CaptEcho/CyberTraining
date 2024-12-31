@@ -49,6 +49,18 @@
                 color: white;
                 font-size: 20px;
             }
+            .question{
+                font-size: 20px;
+                align-items: center;
+                display: flex;
+                flex-direction: column; 
+                justify-content: center;
+            }
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Centers the form contents */
+            }
             .nextbutton{
                 align-items: center;
                 justify-content: center;
@@ -56,6 +68,18 @@
             }
             #next{
                 display: none;
+            }
+            #sbutton{
+                display: block;
+                width: 100px;
+                border-radius: 15px;
+                background-color:rgb(8, 75, 114);
+                overflow: hidden;
+                font-family:'Times New Roman', Times, serif;
+                color: white;
+                font-size: 20px;
+                margin-top: 15px; 
+                text-align: center;
             }
         </style>
         <title>Scenario 1 pt.3</title>
@@ -70,19 +94,20 @@
             <h2>Scenario 1 part 3</h2>
             <br>
             <p>
-                After analysis of the workstation
+                After analysis of the workstation, you find out more information on the hackers themselves. With this, you can 
+                send the proper information to the proper authorities if they can deal with this issue. You also learn how the 
+                attack managed to get through and so you are now tasked with fixing this problem and that a second hack couldn't 
+                happen again. What should you first do?
             </p>
         </div>
         <div class = "question">
             <form>
                 <input type="radio" id="option1" name="question1" value = "Option1">
-                <label for="option1"></label> <br>
+                <label for="option1">Patch up the security gap that let the hackers in</label> <br>
                 <input type="radio" id="option2" name="question1" value = "Option2">
-                <label for="option2"></label> <br>
+                <label for="option2">Look through the facility's ICS to locate and remove other malware</label> <br>
                 <input type="radio" id="option3" name="question1" value = "Option3">
-                <label for="option3"></label> <br>
-                <input type="radio" id="option4" name="question1" value = "Option4">
-                <label for="option4"></label><br>
+                <label for="option3">Set up new security measures to further protect systems from potential hacks</label> <br>
 
                 <button type="button" onclick = "checkAnswers()">Submit</button>
             </form>
@@ -104,22 +129,14 @@
                 {
                     feedback.textContent = "Please select an answer";
                 }
-                else if (selected.value == "Option1")
-                {
-                    feedback.textContent = "Correct! Ensuring the workstation is isolated is essential, so further hacks are not possible. Finding more information is also important as it could reveal the weaknesses that occurred. "
-                    hidden.style.display = "block";
-                }
                 else if (selected.value == "Option2")
                 {
-                    feedback.textContent = "Incorrect! Isolating the workstation isn't enough as more information is needed."
-                }
-                else if (selected.value == "Option3")
-                {
-                    feedback.textContent = "Incorrect! It is necessary to isolate the workstation so hackers cannot further attack the system."
+                    feedback.textContent = "Correct! If you don't do this first, the hackers might be able to use the malware to do other attacks on the power plant."
+                    hidden.style.display = "block";
                 }
                 else
                 {
-                    feedback.textContent = "Incorrect! While it might get rid of the problem, it doesn't help you find further information about the hackers and ones involved."
+                    feedback.textContent = "Incorrect! While this is also important, there might still be malware in the systems that could cause damage."
                 }
             }
         </script>

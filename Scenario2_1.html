@@ -8,9 +8,13 @@
             body{
                 font-family:'Times New Roman', Times, serif;
                 background-color:rgb(173, 199, 200);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 min-height: 100vh;
-                text-align: center;
                 margin: 0 auto;
+                text-align: center;
+                max-width: 1300px;
             }
             h1{
                 color:rgb(1, 10, 20);
@@ -27,20 +31,55 @@
                 font-size: 20px;
                 text-align: center;
             }
+            .homebutton{
+                align-items: center;
+                justify-content: center;
+                padding: 30px;
+            }
             .button{
                 display: block;
                 align-items: center;
-                justify-content: center;
                 width: 100px;
                 border-radius: 15px;
                 background-color:rgb(8, 75, 114);
                 overflow: hidden;
-                position: absolute;
             }
             .button p{
                 text-align: center;
                 color: white;
                 font-size: 20px;
+            }
+            .question{
+                font-size: 20px;
+                align-items: center;
+                display: flex;
+                flex-direction: column; 
+                justify-content: center;
+            }
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Centers the form contents */
+            }
+            .nextbutton{
+                align-items: center;
+                justify-content: center;
+                padding: 30px;
+            }
+            #next{
+                display: none;
+            }
+            #sbutton{
+                display: block;
+                width: 100px;
+                border-radius: 15px;
+                background-color:rgb(8, 75, 114);
+                overflow: hidden;
+                font-family:'Times New Roman', Times, serif;
+                color: white;
+                font-size: 20px;
+                margin-top: 15px; 
+                text-align: center;
             }
         </style>
         <title>Scenario 2 pt.1</title>
