@@ -82,7 +82,7 @@
                 text-align: center;
             }
         </style>
-        <title>Scenario 1 pt.3</title>
+        <title>Scenario 1 pt.4</title>
     </head>
     <body>
         <div class="homebutton">
@@ -91,13 +91,10 @@
             </a>
         </div>
         <div class="text-container">
-            <h2>Scenario 1 part 3</h2>
+            <h2>Scenario 1 part 4</h2>
             <br>
             <p>
-                After analysis of the workstation, you find out more information on the hackers themselves. With this, you can 
-                send the proper information to the proper authorities if they can deal with this issue. You also learn how the 
-                attack managed to get through and so you are now tasked with fixing this problem and that a second hack couldn't 
-                happen again. What should you first do?
+                Now that you have ensured no more malware is in the system, what should be done next?
             </p>
         </div>
         <div class = "question">
@@ -105,9 +102,7 @@
                 <input type="radio" id="option1" name="question1" value = "Option1">
                 <label for="option1">Patch up the security gap that let the hackers in</label> <br>
                 <input type="radio" id="option2" name="question1" value = "Option2">
-                <label for="option2">Look through the facility's ICS to locate and remove other malware</label> <br>
-                <input type="radio" id="option3" name="question1" value = "Option3">
-                <label for="option3">Set up new security measures to further protect systems from potential hacks</label> <br>
+                <label for="option2">Set up new security measures to further protect systems from potential hacks</label> <br>
 
                 <button id="sbutton" type="button" onclick = "checkAnswers()">Submit</button>
             </form>
@@ -129,14 +124,14 @@
                 {
                     feedback.textContent = "Please select an answer";
                 }
-                else if (selected.value == "Option2")
+                else if (selected.value == "Option1")
                 {
-                    feedback.textContent = "Correct! If you don't do this first, the hackers might be able to use the malware to do other attacks on the power plant."
+                    feedback.textContent = "Correct! Now that any malware that could still cause havoc in the system is gone, you can now patch up the security gap."
                     hidden.style.display = "block";
                 }
                 else
                 {
-                    feedback.textContent = "Incorrect! While this is also important, there might still be malware in the systems that could cause damage."
+                    feedback.textContent = "Incorrect! While this is also important, it would be best to deal with the gap in the system first before implementing new security measures."
                 }
             }
         </script>
