@@ -82,7 +82,7 @@
                 text-align: center;
             }
         </style>
-        <title>Scenario 1 pt.4</title>
+        <title>Scenario 2 pt.2</title>
     </head>
     <body>
         <div class="homebutton">
@@ -91,25 +91,29 @@
             </a>
         </div>
         <div class="text-container">
-            <h2>Scenario 1 part 4</h2>
+            <h2>Scenario 2 part 2</h2>
             <br>
             <p>
-                Now that you have ensured no more malware is in the system, what should be done next?
+                
             </p>
         </div>
         <div class = "question">
             <form>
                 <input type="radio" id="option1" name="question1" value = "Option1">
-                <label for="option1">Patch up the security gap that let the hackers in</label> <br>
+                <label for="option1">Negotiate with the hackers for a lower ransom</label> <br>
                 <input type="radio" id="option2" name="question1" value = "Option2">
-                <label for="option2">Set up new security measures to further protect systems from potential hacks</label> <br>
+                <label for="option2">Pay the hackers the ransom money</label> <br>
+                <input type="radio" id="option3" name="question1" value = "Option3">
+                <label for="option3">Check the extent to which the ransomware affects the systems</label> <br>
+                <input type="radio" id="option4" name="question1" value = "Option4">
+                <label for="option4">Switch critical systems to manual control</label> <br>
 
                 <button id="sbutton" type="button" onclick = "checkAnswers()">Submit</button>
             </form>
             <p id="feedback"></p>
         </div>
         <div class = "nextbutton">
-            <a href = "Scenario1_complete.html" class="button" id = "next">
+            <a href = "Scenario2_2.html" class="button" id="next">
                 <p>Next Part</p>
             </a>
         </div>
@@ -119,19 +123,27 @@
                 const selected = document.querySelector('input[name="question1"]:checked');
                 const feedback = document.getElementById("feedback");
                 const hidden = document.getElementById("next");
-
+                
                 if (!selected)
                 {
                     feedback.textContent = "Please select an answer";
                 }
+                else if (selected.value == "Option4")
+                {
+                    feedback.textContent = "Correct! It is best to ensure the nuclear power plant is now under manual control so that it can properly be shut down in this scenario.";
+                    hidden.style.display = "block";
+                }
                 else if (selected.value == "Option1")
                 {
-                    feedback.textContent = "Correct! Now that any malware that could still cause havoc in the system is gone, you can now patch up the security gap."
-                    hidden.style.display = "block";
+                    feedback.textContent = "Incorrect! The hackers might not like negotiations and there is no guarantee they will release the software of the systems.";
+                }
+                else if (selected.value == "Option2")
+                {
+                    feedback.textContent = "Incorrect! There is no guarantee they will release the systems after being paid and might ask for even more money.";
                 }
                 else
                 {
-                    feedback.textContent = "Incorrect! While this is also important, it would be best to deal with the gap in the system first before implementing new security measures."
+                    feedback.textContent = "Incorrect! While this is important as well, it is best to get the reactor under manual control before anything major happens with it.";
                 }
             }
         </script>

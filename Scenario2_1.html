@@ -59,7 +59,7 @@
             form {
                 display: flex;
                 flex-direction: column;
-                align-items: center; /* Centers the form contents */
+                align-items: center;
             }
             .nextbutton{
                 align-items: center;
@@ -85,8 +85,76 @@
         <title>Scenario 2 pt.1</title>
     </head>
     <body>
-        <a href="index.html" class="button">
-            <p>Home</p>
-        </a>
+        <div class="homebutton">
+            <a href="index.html" class="button">
+                <p>Home</p>
+            </a>
+        </div>
+        <div class="text-container">
+            <h2>Scenario 2 start</h2>
+            <br>
+            <p>
+                You are a cyber security professional that is currently watching over the systems of a nuclear powerplant's
+                industrial control systems or ICS. The ICS watches over many systems that ensure the continued function of
+                a nuclear power plant. Without it, severe damage could occur not only to the nuclear power plant itself,
+                but the general area surrounding it as well. It is very important that these systems remain operational
+                and have proper backups in order for a catastrophic event to not occur.
+                <br>
+                While on duty, you are notified that operators have been locked out of several important systems. It seems 
+                hackers took over the systems using ransomware software and are demanding you pay money to regain access. 
+                What should you do to deal with this problem?
+                <br> 
+            </p>
+        </div>
+        <div class = "question">
+            <form>
+                <input type="radio" id="option1" name="question1" value = "Option1">
+                <label for="option1">Negotiate with the hackers for a lower ransom</label> <br>
+                <input type="radio" id="option2" name="question1" value = "Option2">
+                <label for="option2">Pay the hackers the ransom money</label> <br>
+                <input type="radio" id="option3" name="question1" value = "Option3">
+                <label for="option3">Check the extent to which the ransomware affects the systems</label> <br>
+                <input type="radio" id="option4" name="question1" value = "Option4">
+                <label for="option4">Switch critical systems to manual control</label> <br>
+
+                <button id="sbutton" type="button" onclick = "checkAnswers()">Submit</button>
+            </form>
+            <p id="feedback"></p>
+        </div>
+        <div class = "nextbutton">
+            <a href = "Scenario2_2.html" class="button" id="next">
+                <p>Next Part</p>
+            </a>
+        </div>
+        <script>
+            function checkAnswers()
+            {
+                const selected = document.querySelector('input[name="question1"]:checked');
+                const feedback = document.getElementById("feedback");
+                const hidden = document.getElementById("next");
+                
+                if (!selected)
+                {
+                    feedback.textContent = "Please select an answer";
+                }
+                else if (selected.value == "Option4")
+                {
+                    feedback.textContent = "Correct! It is best to ensure the nuclear power plant is now under manual control so that it can properly be shut down in this scenario.";
+                    hidden.style.display = "block";
+                }
+                else if (selected.value == "Option1")
+                {
+                    feedback.textContent = "Incorrect! The hackers might not like negotiations and there is no guarantee they will release the software of the systems.";
+                }
+                else if (selected.value == "Option2")
+                {
+                    feedback.textContent = "Incorrect! There is no guarantee they will release the systems after being paid and might ask for even more money.";
+                }
+                else
+                {
+                    feedback.textContent = "Incorrect! While this is important as well, it is best to get the reactor under manual control before anything major happens with it.";
+                }
+            }
+        </script>
     </body>
 </html>
