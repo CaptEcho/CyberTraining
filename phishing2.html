@@ -98,9 +98,10 @@
             <p style="text-indent: 25px">
                 Due to reports of individuals having their accounts taken over, we have decided to implement a new training
                 course for our employees. It will be mandatory to complete within a three month time frame. Please register
-                yourself within the next 3 days, otherwise you will be reprimanded by HR.
+                yourself within the next 3 days, otherwise you will be reprimanded by HR. The link is located below.
                 <br><br>
-                <a href="Coca-Cola.training.html">Training site!</a>
+                
+                <a href="Coca-Cola.training.html">Training site</a>
             </p>
             <p>
                 Regards, <br>
@@ -135,14 +136,14 @@
                 {
                     feedback.textContent = "Please select an answer";
                 }
-                else if (selected.value == "Option2")
+                else if (selected.value == "Option1")
                 {
-                    feedback.textContent = "Correct! If you noticed, the email has several mistakes with the grammar and spelling. On top of that, your 'manager' is trying to force you to send the usernames and passwords.";
+                    feedback.textContent = "Correct! First, we know that it is from a trusted source. Second, the link that is given does look legitimate.";
                     hidden.style.display = "block";
                 }
                 else
                 {
-                    feedback.textContent = "Incorrect! The email is littered with several spelling errors and is trying to get you to send your login details.";
+                    feedback.textContent = "Incorrect! The email is legitimate as the person sending it is a trusted source. On top of that, the link is legitimate.";
                 }
             }
         </script>
